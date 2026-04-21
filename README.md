@@ -34,7 +34,7 @@ To run this code, you will need the following R packages installed:
 
 *Note: You must have a working C++ compiler installed to compile the Armadillo matrix algebra code.*
 
-## 🚀 How to Run
+## How to Run
 1. Clone this repository.
 2. Update the `setwd()` path in the R script to match your local directory.
 3. Modify the submatrix size $k$ inside `wigner_submatrix.cpp` if you wish to test different growth limits (e.g., change `int k = (int) std::sqrt((double)N);` to `int k = N / 10;`).
