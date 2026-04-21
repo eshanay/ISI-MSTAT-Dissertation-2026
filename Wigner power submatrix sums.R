@@ -1,18 +1,14 @@
 library(Rcpp)
 library(RcppArmadillo)
 
-# Sourcing the C++ file
-setwd("C:\\Users\\eshan\\Downloads\\ISI MSTAT references\\MSTAT Dissertation\\R codes")
+# Set working directory to the folder containing the C++ script
+setwd("PATH/TO/YOUR/DIRECTORY") 
 sourceCpp("wigner_submatrix.cpp")
 
 # Parameters
 N <- 1000 #Wigner matrix dimension
 p <- 4 #raised to the power p
 iterations <- 1000 #number of replications
-
-# Run simulation
-#sqrtN <- write.csv(results,"C:\\Users\\eshan\\Downloads\\ISID MSTAT references\\MSTAT Dissertation\\outputs\\Fourth power sum outputs\\sqrtN.csv",row.names=F)
-#Nby10 <- write.csv(results,"C:\\Users\\eshan\\Downloads\\ISID MSTAT references\\MSTAT Dissertation\\outputs\\Fourth power sum outputs\\Nby10.csv",row.names=F)
 
 #submatrix dimension k's functional dependence on N is specified in the C code
 results <- replicate(iterations,wigner_submatrix_sum_cpp(N, p))
